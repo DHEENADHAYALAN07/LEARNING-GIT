@@ -1,14 +1,12 @@
 name: Sample pipeline
-
 on:
   push:
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       -name: Build application
-      run: echo "Building application"
+       run: echo "Building application"
 

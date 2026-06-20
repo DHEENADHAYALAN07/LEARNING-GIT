@@ -1,20 +1,17 @@
-name: Sample pipeline
+name: Docker CI
 
 on:
   push:
     branches:
       - main
-      
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Build application
-        run: echo "Building application"
-
-  Test:
-    runs-on: ubuntu-latest
 
     steps:
-      - name: Run tests
-        run: echo "Running tests"
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: docker build -t main:v1 .

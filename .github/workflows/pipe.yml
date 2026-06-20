@@ -10,8 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: copying source code
         uses: actions/checkout@v4
 
       - name: Build Docker Image
-        run: docker build -t main:v1 .
+        run: docker build -t main:v2 .
+
+      - name: Image verification
+        run: docker images
